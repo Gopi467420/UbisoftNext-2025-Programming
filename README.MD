@@ -1,42 +1,200 @@
-#Ubi Contest API for Mac & Windows
+# 🚀 Base Invaders – Custom 2D Game Engine (C++)
 
-## Dependencies
+A custom-built **2D top-down game engine and gameplay prototype** developed in C++ as part of the **Ubisoft NEXT 2025–2026 Programming Challenge**.
 
-### Windows
-* Visual Studio 2022 Community https://visualstudio.microsoft.com/vs/community/
-    * This is a windows IDE, windows build system and c++ compiler all bundled together
-* CMake (for build system) https://cmake.org/
-    * This is a build system generator, which allows us to build the project on multiple platforms
+This project focuses on building core engine systems from scratch using a **data-oriented and performance-driven approach**, without relying on existing game engines.
 
-### MacOS
-* Homebrew (for package management) [get from homebrew website] https://brew.sh/
-    * This is a package manager for macos systems
-* CMake (see windows section)
-* freeglut
-    * This is an OpenGL utility library. Install by running [brew install freeglut] in a macos terminal
-* SDL3
-    * This is a cross-platform utility library. Install by running [brew install SDL3] in a macos terminal
-* XCode command line tools
-    * This has the MacOS build system and compiler. It should be installed automatically when installing homebrew, but can be installed through the MacOS terminal.
+---
 
-## To build
 
-### Windows
-* Run generate-windows.bat script in DAU-NEXT-API directory
-* open visual studio solution in build/win64
-* build and run from visual studio
 
-### MacOS
-* Run ./generate-macos.sh script in DAU-NEXT-API directory
-* go to build/macos directory
-    * run [make all] in macos terminal to build the program
-    * run [make run] to run the game
-        * Note that the application can't be closed in the window. use cmd + Q to quit the program
-* If using VSCode, commands can be run from the VSCode terminal
+---
 
-## To add code to project
-* Add new code files in src/Game subdirectory
-* Re-run the generate-windows or generate-macos script
+## 🎮 Game Overview
 
-## Useful Notes
-* When run using the generated projects, the game will run in the DAU-NEXT-API directory, which is useful for referencing data files.
+**Base Invaders** is a hybrid of **tower defense and survival gameplay**, where the player defends a central base against waves of enemies.
+
+### Gameplay Features:
+- Strategic positioning and crowd control  
+- Multiple enemy types with unique behaviors  
+- Upgrade and progression system  
+
+---
+
+## ⚙️ Core Systems & Architecture
+
+The engine follows an **ECS-inspired architecture**:
+
+### 🧩 Entity Structure
+- `GObject` → Base class (ID, lifecycle, transform)  
+- `Entity` → Gameplay abstraction  
+- `EntityComponent` → Modular behaviors  
+
+### 🔧 Components Implemented
+- Movement Component  
+- Health Component  
+- Collision Component (Circle-based)  
+- Shape/Rendering Component  
+
+### 💡 Design Highlights
+- Component-driven system (no rigid inheritance chains)  
+- Clear separation of data and logic  
+- Scalable and extensible architecture  
+
+---
+
+## 🚀 Performance & Memory Optimization
+
+### 🔹 Object Pooling
+Implemented custom pools for:
+- Enemies  
+- Projectiles  
+- Gems  
+
+### 🔹 Data-Oriented Design (SoA)
+- Data stored in **separate contiguous arrays**:
+  - Positions  
+  - Directions  
+  - Speeds  
+  - Health  
+- Improves cache locality and iteration performance  
+
+### 🔹 Efficient Removal
+- `aliveCount` + **swap-and-remove**  
+- Constant time (O(1)) deletion  
+- Keeps active data tightly packed  
+
+### 🔹 Runtime Optimization
+- No dynamic allocations during gameplay  
+- Stable and predictable performance  
+
+---
+
+## 💥 Combat System
+
+### 🔫 Ammo Types
+- **Precision Ammo** → Single-target, high accuracy  
+- **Spread Ammo** → Multi-shot for crowd control  
+- **Explosive Ammo** → Area-of-effect damage  
+
+### 💡 Design
+- Shared projectile pool  
+- Behavior controlled through data-driven logic  
+
+---
+
+## 👾 Enemy System
+
+### Enemy Types
+- **Swarm** → Fast, low health  
+- **WallBreaker** → High damage  
+- **Airborne** → Fast and durable  
+- **Bomber** → High impact  
+
+### Features
+- Data-driven enemy stats  
+- Shared behavior systems  
+- Easy tuning and balancing  
+
+---
+
+## 🧠 AI, Movement & Physics
+
+### 🔹 Movement System
+- Centralized system for:
+  - Direction  
+  - Velocity  
+  - Target-seeking  
+
+### 🔹 AI Behavior
+- Enemy separation logic  
+- Avoids clustering  
+
+### 🔹 Collision System
+- Circle-based collision  
+- Layer & mask filtering  
+- Trigger vs collision support  
+
+### 🔹 Physics Manager
+- Collision detection  
+- Event dispatch  
+- Overlap resolution  
+
+---
+
+## 📦 Spatial Partitioning
+
+Implemented **Grid-Based Spatial Partitioning (Grid Hashing)**:
+- Divides world into cells  
+- Reduces collision checks  
+- Efficient neighbor queries  
+
+---
+
+## 🎥 Supporting Systems
+
+### 🎥 Camera
+- World ↔ Screen conversion  
+- Zoom and pan  
+
+### ⏱️ Wave System
+- Timer-based spawning  
+- Progressive difficulty  
+
+### 🧩 UI / HUD
+- Basic gameplay feedback  
+- Layered rendering  
+
+---
+
+## ⚙️ Engine Flow
+
+1. **Initialization**
+   - Systems and pools initialized  
+   - Entities created  
+
+2. **Update Loop**
+   - Movement updates  
+   - Physics & collision processing  
+   - Game logic updates  
+
+3. **Rendering**
+   - Entities rendered via camera  
+   - UI rendered on top  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Language:** C++  
+- **IDE:** Visual Studio  
+- **Build System:** CMake  
+
+---
+
+## 💡 Key Learnings
+
+- Data-oriented design improves performance  
+- Object pooling removes runtime overhead  
+- System-driven architecture scales better  
+- Building from scratch deepens engine understanding  
+
+---
+
+## 📌 Future Improvements
+
+- Hot-reload system  
+- Advanced AI behaviors  
+- Improved UI system  
+- Additional gameplay mechanics  
+
+---
+
+## 👨‍💻 Author
+
+**Gopi Velmurugan**  
+- LinkedIn: https://www.linkedin.com/in/gopi-velmurugan-65249716a/  
+- Email: gopiofficialca20@gmail.com  
+
+---
+
