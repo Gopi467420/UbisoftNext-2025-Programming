@@ -1,0 +1,4 @@
+C:/Users/gopio/OneDrive/Work/Game Dev/UBSOFTNEXT/NEXT-2025-Programming-API/out/build/x64-Debug/CMakeFiles/ContestAPI.dir
+C:/Users/gopio/OneDrive/Work/Game Dev/UBSOFTNEXT/NEXT-2025-Programming-API/out/build/x64-Debug/CMakeFiles/Game.dir
+C:/Users/gopio/OneDrive/Work/Game Dev/UBSOFTNEXT/NEXT-2025-Programming-API/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/gopio/OneDrive/Work/Game Dev/UBSOFTNEXT/NEXT-2025-Programming-API/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

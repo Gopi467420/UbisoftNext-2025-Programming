@@ -1,0 +1,182 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "Game.exe"
+		},
+		{
+			"path" : "Game.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 148,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 159,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 137,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 153,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Ob0 /Od -std:c++17 -MDd -RTC1 -Zi"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "BUILD_PLATFORM_APPLE=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "BUILD_PLATFORM_WINDOWS=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "GL_SILENCE_DEPRECATION"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/gopio/OneDrive/Work/Game Dev/UBSOFTNEXT/NEXT-2025-Programming-API/src/Game"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/gopio/OneDrive/Work/Game Dev/UBSOFTNEXT/NEXT-2025-Programming-API/src/ContestAPI/vendor/glut/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/gopio/OneDrive/Work/Game Dev/UBSOFTNEXT/NEXT-2025-Programming-API/src/ContestAPI"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "ContestAPI::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "Game::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Ob0 /Od -MDd -RTC1 -Zi",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/subsystem:windows",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-LIBPATH:C:\\Users\\gopio\\OneDrive\\Work\\GAMEDE~1\\UBSOFT~1\\NEXT-2~1\\src\\CONTES~1\\vendor\\glut\\lib\\x64",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "ContestAPI.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "\"C:\\Users\\gopio\\OneDrive\\Work\\Game Dev\\UBSOFTNEXT\\NEXT-2025-Programming-API\\src\\ContestAPI\\vendor\\glut\\\\lib\\x64\\freeglut.lib\"",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "Game",
+	"nameOnDisk" : "Game.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Game/GameTest.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
